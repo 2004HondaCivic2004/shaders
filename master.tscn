@@ -1,0 +1,40 @@
+[gd_scene load_steps=5 format=3 uid="uid://ckysvtxyqmj4q"]
+
+[ext_resource type="PackedScene" uid="uid://cb7urw2qm6pse" path="res://scenes/dissolve.tscn" id="1_te040"]
+[ext_resource type="PackedScene" uid="uid://c2qvdex2h87em" path="res://scenes/portal.tscn" id="2_s35ub"]
+[ext_resource type="PackedScene" uid="uid://6mcgjhjw7nqm" path="res://scenes/chromatic-abberation-sphere.tscn" id="3_h2bm4"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8aqai"]
+albedo_color = Color(1, 0, 0, 1)
+
+[node name="Master" type="Node3D"]
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.866025, 0.5, 0, -0.5, 0.866025, 0, 2, 0)
+
+[node name="Node3D2" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -5)
+
+[node name="Node3D" parent="Node3D2" instance=ExtResource("1_te040")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 0)
+
+[node name="Portal" parent="Node3D2" instance=ExtResource("2_s35ub")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 0)
+
+[node name="Chromatic-abberation-sphere" parent="Node3D2" instance=ExtResource("3_h2bm4")]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.06461, 0)
+size = Vector3(40, 1, 40)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="CSGBox3D"]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 1.5, -6.888)
+material = SubResource("StandardMaterial3D_8aqai")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -5.96046e-08, 1, 0, -1, -5.96046e-08, 0, 0, 0)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.872312, -7.50905)
+light_color = Color(0.47451, 0, 1, 1)
+light_energy = 5.0

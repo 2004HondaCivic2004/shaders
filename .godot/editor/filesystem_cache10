@@ -1,0 +1,14 @@
+ea4bc82a6ad023ab7ee23ee620429895
+::res://::1743045482
+icon.svg::CompressedTexture2D::7568293803453557695::1742965486::1743045483::1::::<><><>0<>0<>284e50c6bdd9609bcaec247324252c97<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.s3tc.ctex::
+master.tscn::PackedScene::5525406311992228654::1742985368::0::1::::<><><>0<>0<><>::uid://cb7urw2qm6pse::::res://scenes/dissolve.tscn
+new_script.gd::GDScript::4928128576036449004::1742967677::0::1::::<>Node<><>0<>0<><>::
+README.md::TextFile::-1::1742990247::0::1::::<><><>0<>0<><>::
+::res://models/::1742967578
+cube.glb::PackedScene::8974149161241382480::1742967528::1743045483::1::::<><><>0<>0<>7ac4beb2c5941e17058f0f46d4be9cbd<>res://.godot/imported/cube.glb-c6bf6ebacd621473d1ca4ff4a368b9dc.scn::
+::res://scenes/::1742986124
+dissolve.tscn::PackedScene::4910336195473521436::1742985368::0::1::::<><><>0<>0<><>::uid://bw54ijamsgk0g::::res://shaders/dissolve.gdshader
+portal.tscn::PackedScene::6702250850769190444::1742986124::0::1::::<><><>0<>0<><>::uid://p1rj0wurcai2::::res://shaders/portal.gdshader
+::res://shaders/::1742986128
+dissolve.gdshader::Shader::3994282128772752080::1742986128::0::1::::<><><>0<>0<><>::
+portal.gdshader::Shader::1107556085199169739::1742986128::0::1::::<><><>0<>0<><>::

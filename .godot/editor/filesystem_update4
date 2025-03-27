@@ -1,0 +1,7 @@
+res://master.tscn
+res://shaders/portal.gdshader
+res://scenes/portal.tscn
+res://scenes/chromatic-abberation-sphere.tscn
+res://shaders/dissolve.gdshader
+res://shaders/chromatic-abberation-sphere.gdshader
+res://scenes/dissolve.tscn

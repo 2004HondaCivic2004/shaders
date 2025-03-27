@@ -1,0 +1,26 @@
+[gd_scene load_steps=3 format=3 uid="uid://6mcgjhjw7nqm"]
+
+[ext_resource type="Shader" uid="uid://bmhwf0srsxucm" path="res://shaders/chromatic-abberation-sphere.gdshader" id="1_hq5ma"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_hq5ma"]
+render_priority = 0
+shader = ExtResource("1_hq5ma")
+shader_parameter/sphere_color = Color(0, 0, 0, 0)
+shader_parameter/wave_amplitude = 0.006
+shader_parameter/wave_frequency = 19.397
+shader_parameter/wave_speed = 3.618
+shader_parameter/chroma_amount = 1.0
+shader_parameter/stars_enabled = true
+shader_parameter/star_field_scale = 4.377
+shader_parameter/star_size = 0.008
+shader_parameter/star_intensity = 1.0
+shader_parameter/star_axis_speed = 0.051
+shader_parameter/star_move_mode = 1
+
+[node name="Chromatic-abberation-sphere" type="Node3D"]
+
+[node name="CSGSphere3D" type="CSGSphere3D" parent="."]
+material_override = SubResource("ShaderMaterial_hq5ma")
+radius = 1.0
+radial_segments = 40
+rings = 20

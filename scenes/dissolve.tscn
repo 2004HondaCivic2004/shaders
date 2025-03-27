@@ -1,0 +1,26 @@
+[gd_scene load_steps=3 format=3 uid="uid://cb7urw2qm6pse"]
+
+[ext_resource type="Shader" uid="uid://bw54ijamsgk0g" path="res://shaders/dissolve.gdshader" id="1_440ut"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_i7ko0"]
+render_priority = 0
+shader = ExtResource("1_440ut")
+shader_parameter/baseColor = Color(1, 1, 1, 1)
+shader_parameter/dissolveSlider = 0.686
+shader_parameter/dissolveNoiseScale = 2.0
+shader_parameter/edgeNoiseScale = 0.0
+shader_parameter/edgesThickness = 0.147
+shader_parameter/edgeColor = Color(1, 0, 0, 1)
+shader_parameter/edgeEmissionSlider = 1.0
+shader_parameter/enable_dissolve_animation = true
+shader_parameter/animation_speed = 1.0
+shader_parameter/animation_intensity = 0.44
+
+[node name="Node3D" type="Node3D"]
+
+[node name="Cube" type="CSGSphere3D" parent="."]
+transform = Transform3D(0.999815, -0.0162851, 0.0102387, 0.0163758, 0.999827, -0.00883833, -0.010093, 0.00900436, 0.999909, 0, 0, 0)
+material_override = SubResource("ShaderMaterial_i7ko0")
+radius = 1.0
+radial_segments = 40
+rings = 20
