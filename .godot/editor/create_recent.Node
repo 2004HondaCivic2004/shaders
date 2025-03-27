@@ -1,3 +1,9 @@
+MeshInstance3D
+ColorRect
+CanvasLayer
+SubViewport
+SubViewportContainer
+CanvasModulate
 OmniLight3D
 CSGBox3D
 CSGSphere3D

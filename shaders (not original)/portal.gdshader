@@ -1,3 +1,4 @@
+//this shader is from https://godotshaders.com/shader/slipgate-texture-warp/
 shader_type spatial;
 render_mode unshaded, depth_draw_always; // NO LIGHTING!, "depth_draw_always" to 'fix' Z-ordering
 

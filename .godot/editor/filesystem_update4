@@ -1,7 +1,13 @@
-res://master.tscn
-res://shaders/portal.gdshader
 res://scenes/portal.tscn
-res://scenes/chromatic-abberation-sphere.tscn
 res://shaders/dissolve.gdshader
+res://shaders/portal.gdshader
 res://shaders/chromatic-abberation-sphere.gdshader
 res://scenes/dissolve.tscn
+res://scenes/chromatic-abberation-sphere.tscn
+res://master.tscn
+res://shaders (not original)/chromatic-abberation-sphere.gdshader
+res://shaders (not original)/portal.gdshader
+res://shaders (not original)/dissolve.gdshader
+res://shaders (original)/grayscale.gdshader
+res://shaders (not original)/psx_postprocess.gdshader
+res://scenes/grayscale.tscn

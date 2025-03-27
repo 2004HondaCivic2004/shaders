@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://6mcgjhjw7nqm"]
 
-[ext_resource type="Shader" uid="uid://bmhwf0srsxucm" path="res://shaders/chromatic-abberation-sphere.gdshader" id="1_hq5ma"]
+[ext_resource type="Shader" uid="uid://bmhwf0srsxucm" path="res://shaders (not original)/chromatic-abberation-sphere.gdshader" id="1_hq5ma"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_hq5ma"]
 render_priority = 0

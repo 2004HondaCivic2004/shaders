@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://dtdxqm5i63hej"]
+
+[ext_resource type="Shader" uid="uid://okewhk07ydml" path="res://shaders (original)/grayscale.gdshader" id="1_vb1s5"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0leis"]
+render_priority = 0
+shader = ExtResource("1_vb1s5")
+
+[node name="Portal" type="Node3D"]
+
+[node name="Cube" type="CSGSphere3D" parent="."]
+transform = Transform3D(0.999815, -0.0162851, 0.0102387, 0.0163758, 0.999827, -0.00883833, -0.010093, 0.00900436, 0.999909, 0, 0, 0)
+material_override = SubResource("ShaderMaterial_0leis")
+radius = 1.0
+radial_segments = 40
+rings = 20
