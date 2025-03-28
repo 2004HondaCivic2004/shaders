@@ -11,3 +11,8 @@ res://shaders (original)/invert.gdshader
 res://scenes/invert.tscn
 res://scenes/dissolve.tscn
 res://scenes/chromatic-abberation-sphere.tscn
+res://shaders (not original)/dashed-grid.gdshader
+res://shaders (original)/upsidedown.gdshader
+res://scenes/upsidedown.tscn
+res://shaders (original)/vomit.gdshader
+res://scenes/vomit.tscn

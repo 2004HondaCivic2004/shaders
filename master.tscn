@@ -1,12 +1,37 @@
-[gd_scene load_steps=9 format=3 uid="uid://ckysvtxyqmj4q"]
+[gd_scene load_steps=12 format=3 uid="uid://ckysvtxyqmj4q"]
 
 [ext_resource type="PackedScene" uid="uid://cb7urw2qm6pse" path="res://scenes/dissolve.tscn" id="1_te040"]
 [ext_resource type="PackedScene" uid="uid://c2qvdex2h87em" path="res://scenes/portal.tscn" id="2_s35ub"]
 [ext_resource type="PackedScene" uid="uid://6mcgjhjw7nqm" path="res://scenes/chromatic-abberation-sphere.tscn" id="3_h2bm4"]
 [ext_resource type="PackedScene" uid="uid://dtdxqm5i63hej" path="res://scenes/grayscale.tscn" id="4_8aqai"]
 [ext_resource type="PackedScene" uid="uid://bwm15rvqy68x5" path="res://scenes/invert.tscn" id="5_viqro"]
+[ext_resource type="PackedScene" uid="uid://bxx84jp1w88sg" path="res://scenes/upsidedown.tscn" id="6_8usfs"]
+[ext_resource type="Shader" uid="uid://bswo0h21foy0j" path="res://shaders (not original)/dashed-grid.gdshader" id="6_ofr4s"]
+[ext_resource type="PackedScene" uid="uid://cycmegv2htsot" path="res://scenes/vomit.tscn" id="7_7quwi"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_viqro"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_8usfs"]
+render_priority = 0
+shader = ExtResource("6_ofr4s")
+shader_parameter/subdivisions = 32.0
+shader_parameter/grid_width = 0.02
+shader_parameter/background_color = Color(0.2, 0.2, 0.2, 1)
+shader_parameter/background_color_two = Color(0.1, 0.1, 0.1, 1)
+shader_parameter/grid_color = Color(0.5, 0.5, 0.5, 1)
+shader_parameter/dashed_scale_x = 0.02
+shader_parameter/dashed_scale_y = 0.02
+shader_parameter/dashed_count_x = 1.0
+shader_parameter/dashed_count_y = 1.0
+shader_parameter/point_width = 0.021
+shader_parameter/point_color = Color(0, 0, 0, 1)
+shader_parameter/point_scale_x = 0.05
+shader_parameter/point_scale_y = 0.05
+shader_parameter/inside_width = 0.01
+shader_parameter/inside_subdivisions = 6.0
+shader_parameter/inside_color = Color(0.4, 0.4, 0.4, 1)
+shader_parameter/in_dashed_scale_x = 0.3
+shader_parameter/in_dashed_scale_y = 0.3
+shader_parameter/in_dashed_count_x = 6.0
+shader_parameter/in_dashed_count_y = 6.0
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8aqai"]
 albedo_color = Color(1, 0, 0, 1)
@@ -33,10 +58,19 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 0)
 [node name="Portal2" parent="Node3D2" instance=ExtResource("4_8aqai")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 0)
 
+[node name="Portal3" parent="Node3D2" instance=ExtResource("5_viqro")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, 0)
+
+[node name="Portal4" parent="Node3D2" instance=ExtResource("6_8usfs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 0)
+
+[node name="Portal5" parent="Node3D2" instance=ExtResource("7_7quwi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 0)
+
 [node name="CSGBox3D" type="CSGBox3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.06461, 0)
 size = Vector3(40, 1, 40)
-material = SubResource("StandardMaterial3D_viqro")
+material = SubResource("ShaderMaterial_8usfs")
 
 [node name="CSGBox3D" type="CSGBox3D" parent="CSGBox3D"]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 1.5, -6.888)
@@ -47,7 +81,7 @@ transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -4, 1.5, -6.888)
 material = SubResource("StandardMaterial3D_8aqai")
 
 [node name="CSGBox3D3" type="CSGBox3D" parent="CSGBox3D"]
-transform = Transform3D(1.5, 0, 0, 0, 1.30493, -0.739706, 0, 0.739706, 1.30493, -7.55394, 2.12354, -7.81147)
+transform = Transform3D(1.5, 0, 0, 0, 1.30493, -0.739706, 0, 0.739706, 1.30493, -7.31077, 1.66252, -7.81147)
 material = SubResource("StandardMaterial3D_ofr4s")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
@@ -57,6 +91,3 @@ transform = Transform3D(1, 0, 0, 0, -5.96046e-08, 1, 0, -1, -5.96046e-08, 0, 0, 
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.872312, -7.50905)
 light_color = Color(0.47451, 0, 1, 1)
 light_energy = 5.0
-
-[node name="Portal" parent="." instance=ExtResource("5_viqro")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.70231, 0, -6.36872)

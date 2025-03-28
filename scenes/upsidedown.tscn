@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://bxx84jp1w88sg"]
+
+[ext_resource type="Shader" uid="uid://bti7y1o8e1mxb" path="res://shaders (original)/upsidedown.gdshader" id="1_2h1s2"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_dbge3"]
+render_priority = 0
+shader = ExtResource("1_2h1s2")
+
+[node name="Portal" type="Node3D"]
+
+[node name="Cube" type="CSGSphere3D" parent="."]
+transform = Transform3D(0.999815, -0.0162851, 0.0102387, 0.0163758, 0.999827, -0.00883833, -0.010093, 0.00900436, 0.999909, 0, 0, 0)
+material_override = SubResource("ShaderMaterial_dbge3")
+radius = 1.0
+radial_segments = 40
+rings = 20
