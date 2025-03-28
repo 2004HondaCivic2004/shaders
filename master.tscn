@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://ckysvtxyqmj4q"]
+[gd_scene load_steps=13 format=3 uid="uid://ckysvtxyqmj4q"]
 
 [ext_resource type="PackedScene" uid="uid://cb7urw2qm6pse" path="res://scenes/dissolve.tscn" id="1_te040"]
 [ext_resource type="PackedScene" uid="uid://c2qvdex2h87em" path="res://scenes/portal.tscn" id="2_s35ub"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://bxx84jp1w88sg" path="res://scenes/upsidedown.tscn" id="6_8usfs"]
 [ext_resource type="Shader" uid="uid://bswo0h21foy0j" path="res://shaders (not original)/dashed-grid.gdshader" id="6_ofr4s"]
 [ext_resource type="PackedScene" uid="uid://cycmegv2htsot" path="res://scenes/vomit.tscn" id="7_7quwi"]
+[ext_resource type="PackedScene" uid="uid://bfsvw01a7mjqq" path="res://scenes/pain-shader.tscn" id="8_dqkfo"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_8usfs"]
 render_priority = 0
@@ -66,6 +67,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 0)
 
 [node name="Portal5" parent="Node3D2" instance=ExtResource("7_7quwi")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 0)
+
+[node name="Portal6" parent="Node3D2" instance=ExtResource("8_dqkfo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, 0)
 
 [node name="CSGBox3D" type="CSGBox3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.06461, 0)

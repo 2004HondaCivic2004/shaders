@@ -1,0 +1,31 @@
+[gd_scene load_steps=3 format=3 uid="uid://bfsvw01a7mjqq"]
+
+[ext_resource type="Shader" uid="uid://datox88yi0ywx" path="res://shaders (not original)/pain-shader.gdshader" id="1_6f2ti"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_u8sc8"]
+render_priority = 0
+shader = ExtResource("1_6f2ti")
+shader_parameter/albedo = Color(0, 0, 0, 1)
+shader_parameter/specular = 0.0
+shader_parameter/metallic = 0.0
+shader_parameter/alpha_scissor_threshold = 0.0
+shader_parameter/roughness = 0.0
+shader_parameter/point_size = 0.0
+shader_parameter/uv1_scale = Vector3(0, 0, 0)
+shader_parameter/uv1_offset = Vector3(0, 0, 0)
+shader_parameter/uv2_scale = Vector3(0, 0, 0)
+shader_parameter/uv2_offset = Vector3(0, 0, 0)
+shader_parameter/speed = 5.0
+shader_parameter/frequency_uniform = 30.0
+shader_parameter/is_breath = false
+shader_parameter/breath_speed = 0.368
+shader_parameter/breath_freq = 0.021
+
+[node name="Portal" type="Node3D"]
+
+[node name="Cube" type="CSGSphere3D" parent="."]
+transform = Transform3D(0.999815, -0.0162851, 0.0102387, 0.0163758, 0.999827, -0.00883833, -0.010093, 0.00900436, 0.999909, 0, 0, 0)
+material_override = SubResource("ShaderMaterial_u8sc8")
+radius = 1.0
+radial_segments = 40
+rings = 20
