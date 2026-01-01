@@ -41,8 +41,8 @@ void fragment() {
 	if (is_breath){
 		frequency = breath_freq * sin(TIME*breath_speed);
 	}
-	
-	
+
+
     vec2 base_uv = UV;
     vec4 albedo_tex = texture(texture_albedo,base_uv);
     albedo_tex *= COLOR;
@@ -50,15 +50,15 @@ void fragment() {
     float oh_no = cos(world_vertex_x* TIME*speed)+ sin(world_vertex_y* TIME*speed);
     float oh_god = sin(world_vertex_z* TIME*speed)+ cos(world_vertex_x* TIME*speed);
     float oh_feck = sin(world_vertex_z* TIME*speed)+ cos(world_vertex_x* TIME*speed);
-    
+
     ALBEDO = vec3(sin(oh_no*frequency * TIME*speed),cos(oh_god*frequency * TIME*speed),tan(oh_feck*frequency * TIME*speed) );
-    
+
     METALLIC = metallic;
     ROUGHNESS = roughness;
     SPECULAR = specular;
     //ALPHA = round(sin(albedo.a + world_vertex_y*frequency + TIME*speed) );
-    
-    
-    
+
+
+
     ALPHA_SCISSOR_THRESHOLD=alpha_scissor_threshold;
 }

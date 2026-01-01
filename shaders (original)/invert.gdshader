@@ -4,7 +4,7 @@ render_mode unshaded, cull_disabled;
 uniform sampler2D screen_texture: hint_screen_texture;
 
 void vertex() {
-	// Called for every vertex the material is visible on.
+	// Called for every screevertex the material is visible on.
 }
 
 void fragment()
