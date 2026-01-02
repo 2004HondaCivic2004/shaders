@@ -1,7 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://dugmsck74qw24"]
+[gd_scene load_steps=13 format=3 uid="uid://bjgwic2ai5yo0"]
 
-[ext_resource type="LightmapGIData" uid="uid://csf4mspee47h6" path="res://resources/lightmaps/generic.lmbake" id="1_xcest"]
-[ext_resource type="Shader" uid="uid://bswo0h21foy0j" path="res://shaders (not original)/dashed-grid.gdshader" id="2_rt7vi"]
+[ext_resource type="Script" uid="uid://daqhb6bxqjp7" path="res://scenes/display/Activator.gd" id="1_8w3wj"]
+[ext_resource type="LightmapGIData" uid="uid://csf4mspee47h6" path="res://resources/lightmaps/generic.lmbake" id="1_al1bi"]
+[ext_resource type="Animation" uid="uid://dw6lstjatfwaq" path="res://resources/animation/anim_vertical_dissolve.res" id="2_4wrm7"]
+[ext_resource type="Shader" uid="uid://bswo0h21foy0j" path="res://shaders (not original)/dashed-grid.gdshader" id="2_f6w0t"]
+[ext_resource type="Shader" uid="uid://le01gixw3vhw" path="res://shaders (original)/vertical_dissolve.tres" id="3_f6w0t"]
 
 [sub_resource type="Environment" id="Environment_tk151"]
 background_energy_multiplier = 2.0
@@ -17,7 +20,7 @@ fog_depth_end = 223.6
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_a7c5f"]
 render_priority = 0
-shader = ExtResource("2_rt7vi")
+shader = ExtResource("2_f6w0t")
 shader_parameter/subdivisions = 100.0
 shader_parameter/grid_width = 0.02
 shader_parameter/background_color = Color(0.2, 0.2, 0.2, 1)
@@ -45,12 +48,47 @@ material = SubResource("ShaderMaterial_a7c5f")
 add_uv2 = true
 size = Vector2(100, 100)
 
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_8w3wj"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_4wrm7"]
+render_priority = 0
+shader = ExtResource("3_f6w0t")
+shader_parameter/ColorParameter = Color(1, 1, 1, 1)
+shader_parameter/Dissolve_Height = 2.385
+shader_parameter/Noise_Size = 33.86
+shader_parameter/Noise_Scale = 0.535
+shader_parameter/Glow_Thickness = 0.105
+shader_parameter/ColorParameter2 = Color(1.6187238, 0.6227515, 0, 1)
+
+[sub_resource type="Animation" id="Animation_m4tec"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CSGBox3D:surface_material_override/0:shader_parameter/Dissolve_Height")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [2.385]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_q3e6x"]
+_data = {
+&"RESET": SubResource("Animation_m4tec"),
+&"effect": ExtResource("2_4wrm7")
+}
+
 [node name="Generic" type="Node3D"]
+script = ExtResource("1_8w3wj")
+input_key = 4194309
 
 [node name="LightmapGI" type="LightmapGI" parent="."]
 bounces = 10
 generate_probes_subdiv = 3
-light_data = ExtResource("1_xcest")
+light_data = ExtResource("1_al1bi")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_tk151")
@@ -94,3 +132,13 @@ omni_range = 150.0
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(0.86473095, 0.26939973, -0.42386806, 0, 0.843963, 0.5364014, 0.50223535, -0.4638429, 0.72980094, -2.169488, 3.202779, 3.6460257)
+
+[node name="CSGBox3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.24726, 0)
+mesh = SubResource("CapsuleMesh_8w3wj")
+surface_material_override/0 = SubResource("ShaderMaterial_4wrm7")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_q3e6x")
+}

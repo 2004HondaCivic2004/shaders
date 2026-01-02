@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://dmksmc36e2s4c"]
+
+[ext_resource type="Shader" uid="uid://do3xgcs61gu2m" path="res://shaders (original)/dissolve.res" id="1_x7tnx"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_xupmm"]
+render_priority = 0
+shader = ExtResource("1_x7tnx")
+shader_parameter/ColorParameter = Color(0, 0, 0, 1)
+shader_parameter/Dissolve_Height = 0.0
+shader_parameter/Noise_Size = 159.822
+shader_parameter/Noise_Scale = 0.167
+shader_parameter/Glow_Thickness = 0.06
+shader_parameter/ColorParameter2 = Color(1.353256, 1.353256, 1.353256, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_0sucp"]
+material = SubResource("ShaderMaterial_xupmm")
+
+[node name="Node3D" type="MeshInstance3D"]
+mesh = SubResource("SphereMesh_0sucp")
