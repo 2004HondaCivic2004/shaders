@@ -1,0 +1,95 @@
+[gd_scene load_steps=6 format=3 uid="uid://dugmsck74qw24"]
+
+[ext_resource type="LightmapGIData" uid="uid://csf4mspee47h6" path="res://resources/lightmaps/generic.lmbake" id="1_xcest"]
+[ext_resource type="Shader" uid="uid://bswo0h21foy0j" path="res://shaders (not original)/dashed-grid.gdshader" id="2_rt7vi"]
+
+[sub_resource type="Environment" id="Environment_tk151"]
+background_energy_multiplier = 2.0
+fog_enabled = true
+fog_mode = 1
+fog_light_color = Color(0, 0, 0, 1)
+fog_density = 1.0
+fog_sky_affect = 0.0
+fog_depth_curve = 0.112657286
+fog_depth_begin = 30.0
+fog_depth_end = 223.6
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_a7c5f"]
+render_priority = 0
+shader = ExtResource("2_rt7vi")
+shader_parameter/subdivisions = 100.0
+shader_parameter/grid_width = 0.02
+shader_parameter/background_color = Color(0.2, 0.2, 0.2, 1)
+shader_parameter/background_color_two = Color(0.1, 0.1, 0.1, 1)
+shader_parameter/grid_color = Color(0.5, 0.5, 0.5, 1)
+shader_parameter/dashed_scale_x = 0.02
+shader_parameter/dashed_scale_y = 0.02
+shader_parameter/dashed_count_x = 1.0
+shader_parameter/dashed_count_y = 1.0
+shader_parameter/point_width = 0.021
+shader_parameter/point_color = Color(0, 0, 0, 1)
+shader_parameter/point_scale_x = 0.05
+shader_parameter/point_scale_y = 0.05
+shader_parameter/inside_width = 0.01
+shader_parameter/inside_subdivisions = 6.0
+shader_parameter/inside_color = Color(0.4, 0.4, 0.4, 1)
+shader_parameter/in_dashed_scale_x = 0.3
+shader_parameter/in_dashed_scale_y = 0.3
+shader_parameter/in_dashed_count_x = 6.0
+shader_parameter/in_dashed_count_y = 6.0
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_p258a"]
+lightmap_size_hint = Vector2i(502, 502)
+material = SubResource("ShaderMaterial_a7c5f")
+add_uv2 = true
+size = Vector2(100, 100)
+
+[node name="Generic" type="Node3D"]
+
+[node name="LightmapGI" type="LightmapGI" parent="."]
+bounces = 10
+generate_probes_subdiv = 3
+light_data = ExtResource("1_xcest")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_tk151")
+
+[node name="Geometry" type="Node" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Geometry"]
+mesh = SubResource("PlaneMesh_p258a")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="Geometry"]
+transform = Transform3D(1, 0, 0, 0, -1, 8.742278e-08, 0, -8.742278e-08, -1, 0, 100, 0)
+mesh = SubResource("PlaneMesh_p258a")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Geometry"]
+transform = Transform3D(-4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0, 1, -50, 50, 0)
+mesh = SubResource("PlaneMesh_p258a")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="Geometry"]
+transform = Transform3D(4.371139e-08, -1, -8.742278e-08, -1, -4.371139e-08, 0, -3.821371e-15, 8.742278e-08, -1, 50, 50, 0)
+mesh = SubResource("PlaneMesh_p258a")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="Geometry"]
+transform = Transform3D(1.9106855e-15, -4.371139e-08, 1, -1, -4.371139e-08, 0, 4.371139e-08, -1, -4.371139e-08, 2.1855694e-06, 50, 50)
+mesh = SubResource("PlaneMesh_p258a")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="Geometry"]
+transform = Transform3D(-5.7320566e-15, 1.3113416e-07, -1, -1, -4.371139e-08, 0, -4.371139e-08, 1, 1.3113416e-07, -2.1855694e-06, 50, -50)
+mesh = SubResource("PlaneMesh_p258a")
+skeleton = NodePath("../..")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 20.471754, 0)
+light_energy = 30.0
+light_bake_mode = 1
+omni_range = 150.0
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)

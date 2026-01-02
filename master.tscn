@@ -1,14 +1,14 @@
 [gd_scene load_steps=13 format=3 uid="uid://ckysvtxyqmj4q"]
 
-[ext_resource type="PackedScene" uid="uid://cb7urw2qm6pse" path="res://scenes/dissolve.tscn" id="1_te040"]
-[ext_resource type="PackedScene" uid="uid://c2qvdex2h87em" path="res://scenes/portal.tscn" id="2_s35ub"]
-[ext_resource type="PackedScene" uid="uid://6mcgjhjw7nqm" path="res://scenes/chromatic-abberation-sphere.tscn" id="3_h2bm4"]
-[ext_resource type="PackedScene" uid="uid://dtdxqm5i63hej" path="res://scenes/grayscale.tscn" id="4_8aqai"]
-[ext_resource type="PackedScene" uid="uid://bwm15rvqy68x5" path="res://scenes/invert.tscn" id="5_viqro"]
-[ext_resource type="PackedScene" uid="uid://bxx84jp1w88sg" path="res://scenes/upsidedown.tscn" id="6_8usfs"]
+[ext_resource type="PackedScene" uid="uid://cb7urw2qm6pse" path="res://scenes/shaders/dissolve.tscn" id="1_te040"]
+[ext_resource type="PackedScene" uid="uid://c2qvdex2h87em" path="res://scenes/shaders/portal.tscn" id="2_s35ub"]
+[ext_resource type="PackedScene" uid="uid://6mcgjhjw7nqm" path="res://scenes/shaders/chromatic-abberation-sphere.tscn" id="3_h2bm4"]
+[ext_resource type="PackedScene" uid="uid://dtdxqm5i63hej" path="res://scenes/shaders/grayscale.tscn" id="4_8aqai"]
+[ext_resource type="PackedScene" uid="uid://bwm15rvqy68x5" path="res://scenes/shaders/invert.tscn" id="5_viqro"]
+[ext_resource type="PackedScene" uid="uid://bxx84jp1w88sg" path="res://scenes/shaders/upsidedown.tscn" id="6_8usfs"]
 [ext_resource type="Shader" uid="uid://bswo0h21foy0j" path="res://shaders (not original)/dashed-grid.gdshader" id="6_ofr4s"]
-[ext_resource type="PackedScene" uid="uid://cycmegv2htsot" path="res://scenes/vomit.tscn" id="7_7quwi"]
-[ext_resource type="PackedScene" uid="uid://bfsvw01a7mjqq" path="res://scenes/pain-shader.tscn" id="8_dqkfo"]
+[ext_resource type="PackedScene" uid="uid://cycmegv2htsot" path="res://scenes/shaders/vomit.tscn" id="7_7quwi"]
+[ext_resource type="PackedScene" uid="uid://bfsvw01a7mjqq" path="res://scenes/shaders/pain-shader.tscn" id="8_dqkfo"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_8usfs"]
 render_priority = 0

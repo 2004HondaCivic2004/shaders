@@ -1,11 +1,14 @@
+CSGBox3D
+OmniLight3D
+LightmapGI
+Node
+WorldEnvironment
 MeshInstance3D
 ColorRect
 CanvasLayer
 SubViewport
 SubViewportContainer
 CanvasModulate
-OmniLight3D
-CSGBox3D
 CSGSphere3D
 Node3D
 DirectionalLight3D
