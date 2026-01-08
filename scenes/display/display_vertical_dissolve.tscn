@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://bjgwic2ai5yo0"]
+[gd_scene load_steps=15 format=3 uid="uid://bjgwic2ai5yo0"]
 
 [ext_resource type="Script" uid="uid://daqhb6bxqjp7" path="res://scenes/display/Activator.gd" id="1_8w3wj"]
 [ext_resource type="LightmapGIData" uid="uid://csf4mspee47h6" path="res://resources/lightmaps/generic.lmbake" id="1_al1bi"]
@@ -50,15 +50,23 @@ size = Vector2(100, 100)
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_8w3wj"]
 
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_4wrm7"]
+noise_type = 2
+frequency = 0.1676
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_waphr"]
+noise = SubResource("FastNoiseLite_4wrm7")
+
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_4wrm7"]
 render_priority = 0
 shader = ExtResource("3_f6w0t")
 shader_parameter/ColorParameter = Color(1, 1, 1, 1)
 shader_parameter/Dissolve_Height = 2.385
-shader_parameter/Noise_Size = 33.86
-shader_parameter/Noise_Scale = 0.535
+shader_parameter/Noise_Size = 0.0
+shader_parameter/tex_frg_22 = SubResource("NoiseTexture2D_waphr")
+shader_parameter/Edge_Scale = 0.37
 shader_parameter/Glow_Thickness = 0.105
-shader_parameter/ColorParameter2 = Color(1.6187238, 0.6227515, 0, 1)
+shader_parameter/ColorParameter2 = Color(1.619, 0.623, 0, 1)
 
 [sub_resource type="Animation" id="Animation_m4tec"]
 length = 0.001
